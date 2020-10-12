@@ -1,0 +1,15 @@
+1. Create/Sign into your AWS account.
+2. Search for Lightsail in services.
+3. Click "Get Started".
+4. Under "Create Instance" select your location (London, Ireland etc) and instance image (Windows 2016).
+5. Add a powershell script (something like the below):
+    <powershell>
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+</powershell>
+6. Verify your script ran successfully by logging onto your instance. It can take around 15 minutes to be ready to accept RDP connections.
+7. On your dashboard there will be some options such as Connect, Manage, Stop, Reboot and Delete. Choose Connect.
+8. Once connected to your instance, open command prompt.
+9. Change to the Log directory by typing the following:
+    cd C:\ProgramData\Amazon\EC2-Windows\Launch\Log
+10. You will see that a tag has been added:
+    2020/10/12 08:32:50Z: <powershell> tag was provided.. running powershell content
